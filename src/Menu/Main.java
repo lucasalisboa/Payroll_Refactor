@@ -18,11 +18,11 @@ public class Main {
         MyCalendar calendar = new MyCalendar();
         List<Worker> payroll = new ArrayList<>();
         List<CopyStates> stack = new ArrayList<>();
-        save_state(payroll,stack,0);
-        action(calendar,payroll,stack,0);
+        Operation op = new Operation(payroll,stack);
+        action(calendar,payroll,stack,op);
     }
 
-    private static void action(MyCalendar calendar, List <Worker> payroll, List<CopyStates> stack, int stack_index)
+    private static void action(MyCalendar calendar, List <Worker> payroll, List<CopyStates> stack, Operation op)
     {
         System.out.println("TODAY IS:");
         System.out.println(calendar.data.format(calendar.today) + "," + calendar.dayWeek());
@@ -45,6 +45,8 @@ public class Main {
             int operation;
             Scanner sc = new Scanner(System.in);
             operation = sc.nextInt();
+
+            op.operate(operation,payroll,calendar,stack);
 
             if(operation == 1)
             {
@@ -156,7 +158,7 @@ public class Main {
         }
 
         System.out.println();
-        action(calendar, payroll,stack, stack_index);
+        action(calendar, payroll,stack, op);
     }
 
 

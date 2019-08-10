@@ -10,8 +10,9 @@ public class Operation {
     List<Command> slot;
     public int stack_index;
 
-    public Operation() {
+    public Operation(List<Worker> payroll, List<CopyStates> stack) {
         stack_index = 0;
+        save_state(payroll,stack);
         slot.add(0,new Add());
         slot.add(1,new Remove());
         slot.add(2,new PointCard());
@@ -20,6 +21,8 @@ public class Operation {
         slot.add(5,new Information());
         slot.add(6,new RunPayroll());
         slot.add(7,new UndoRedo());
+
+        slot.add(11,new FinishDay());
     }
 
     public void operate(int index, List<Worker> payroll, MyCalendar calendar, List<CopyStates> stack)
