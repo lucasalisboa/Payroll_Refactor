@@ -13,6 +13,7 @@ public class CopyStates {
     private List<Worker> previous ;
 
 
+
     public CopyStates(List <Worker> payroll)
     {
         previous = new ArrayList<>();

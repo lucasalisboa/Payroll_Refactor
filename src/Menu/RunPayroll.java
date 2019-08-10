@@ -1,12 +1,13 @@
 package Menu;
 
 import Entities.Worker;
+import Memento.CopyStates;
 
 import java.util.List;
 
 public class RunPayroll implements Command {
     @Override
-    public void execute(List<Worker> payroll, MyCalendar calendar) {
+    public void execute(List<Worker> payroll, MyCalendar calendar, List<CopyStates> stack) {
         int c = 0;
         for (Worker worker : payroll) {
             if (calendar.cal.compareTo(worker.getPay_day()) == 0) {
