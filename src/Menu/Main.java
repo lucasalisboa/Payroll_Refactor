@@ -28,18 +28,18 @@ public class Main {
         System.out.println(calendar.data.format(calendar.today) + "," + calendar.dayWeek());
         System.out.println();
         System.out.println("CHOOSE YOUR OPERATION:");
-        System.out.println("1- ADD NEW EMPLOYER");
-        System.out.println("2- REMOVE A EMPLOYER");
-        System.out.println("3- PUT THE POINT CARD");
-        System.out.println("4- PUT THE SALE'S RESULT");
-        System.out.println("5- PUT THE SERVICE TAX");
-        System.out.println("6- CHANGE THE EMPLOYER INFORMATIONS");
-        System.out.println("7- RUN THE PAYROLL");
-        System.out.println("8- UNDO/REDO");
-        System.out.println("9- SHOW THE PAYMENT SCHEDULE");
-        System.out.println("10- CREATE A NEW PAYMENT SCHEDULE");
-        System.out.println("11 - SHOW THE WORKER INFORMATIONS");
-        System.out.println("12- FINISH THE DAY");
+        System.out.println("0- ADD NEW EMPLOYER");
+        System.out.println("1- REMOVE A EMPLOYER");
+        System.out.println("2- PUT THE POINT CARD");
+        System.out.println("3- PUT THE SALE'S RESULT");
+        System.out.println("4- PUT THE SERVICE TAX");
+        System.out.println("5- CHANGE THE EMPLOYER INFORMATIONS");
+        System.out.println("6- RUN THE PAYROLL");
+        System.out.println("7- UNDO/REDO");
+        System.out.println("8- SHOW THE PAYMENT SCHEDULE");
+        System.out.println("9- CREATE A NEW PAYMENT SCHEDULE");
+        System.out.println("10 - SHOW THE WORKER INFORMATIONS");
+        System.out.println("11- FINISH THE DAY");
 
         try{
             int operation;
@@ -48,24 +48,7 @@ public class Main {
 
             if(operation == 1)
             {
-                String type;
-                System.out.println("WHAT'S THE WORKER TYPE?");
-                System.out.println("H- HOURLY; S- SALARIED; C- COMMISSIONED");
-                type = sc.next();
-                sc.nextLine();
 
-                if (type.equals("H"))
-                {
-                    payroll.add(new HouristWorker(calendar.today));
-                }
-                else if(type.equals("S"))
-                {
-                    payroll.add(new SalariedWorker(calendar.today));
-                }
-                else
-                {
-                    payroll.add(new CommissionedWorker(calendar.today));
-                }
                 save_state(payroll,stack,stack_index);
                 stack_index = 0;
             }
@@ -102,63 +85,26 @@ public class Main {
             }
             else if(operation == 2)
             {
-                int index = search(payroll);
-                if (index != -1)
-                {
-                    remove(payroll,index);
-                }
+
                 save_state(payroll,stack,stack_index);
                 stack_index = 0;
             }
 
             else if(operation == 3)
             {
-                int index = search(payroll);
-                if(index != -1)
-                {
-                    if(payroll.get(index) instanceof HouristWorker)
-                    {
-                        ((HouristWorker) payroll.get(index)).point();
-                    }
-                    else
-                    {
-                        System.out.println("THIS WORKER IS NOT A HOURIST");
-                    }
-                }
+
                 save_state(payroll,stack,stack_index);
                 stack_index = 0;
             }
             else if(operation == 4)
             {
-                int index = search(payroll);
-                if(index != -1)
-                {
-                    if(payroll.get(index) instanceof CommissionedWorker)
-                    {
-                        ((CommissionedWorker) payroll.get(index)).newSale();
-                    }
-                    else
-                    {
-                        System.out.println("THIS WORKER IS NOT A COMMISSIONED");
-                    }
-                }
+
                 save_state(payroll,stack,stack_index);
                 stack_index = 0;
             }
             else if(operation == 5)
             {
-                int index = search(payroll);
-                if(index != -1)
-                {
-                    if(payroll.get(index) instanceof CommissionedWorker)
-                    {
-                        ((CommissionedWorker) payroll.get(index)).setPercent();
-                    }
-                    else
-                    {
-                        System.out.println("THIS WORKER IS NOT A COMMISSIONED");
-                    }
-                }
+
                 save_state(payroll,stack,stack_index);
                 stack_index = 0;
             }
@@ -236,17 +182,7 @@ public class Main {
 
             else if(operation == 7)
             {
-                int c = 0;
-                for (Worker worker : payroll) {
-                    if (calendar.cal.compareTo(worker.getPay_day()) == 0) {
-                        System.out.println("ID: " + worker.id);
-                        System.out.println("NAME: " + worker.name);
-                        worker.payment(calendar.today);
-                        c++;
-                        System.out.println();
-                    }
-                }
-                System.out.println(c + " WORKERS WERE PAID TODAY");
+
                 save_state(payroll,stack,stack_index);
                 stack_index = 0;
             }
@@ -355,25 +291,6 @@ public class Main {
         stack.add(0,new CopyStates(payroll));
     }
 
-    private static void remove(List <Worker> payroll, int i)
-    {
-        String worker_name = payroll.get(i).name;
-        payroll.remove(i);
-        System.out.println("THE WORKER " + worker_name + " WAS REMOVED");
-    }
-    private static int search(List <Worker> payroll)
-    {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("WHAT'S THE WORKER ID?");
-        String worker_id = sc.nextLine();
-        for(int i = 0; i < payroll.size(); i++)
-        {
-            if(payroll.get(i).id.equals(worker_id))
-            {
-                return i;
-            }
-        }
-        System.out.println("THE WORKER DOESN'T EXIST");
-        return -1;
-    }
+
+
 }
