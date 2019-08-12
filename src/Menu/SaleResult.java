@@ -7,6 +7,10 @@ import Memento.CopyStates;
 import java.util.List;
 
 public class SaleResult extends Operation implements Command {
+    public SaleResult() {
+        super();
+    }
+
     @Override
     public void execute(List<Worker> payroll, MyCalendar calendar, List<CopyStates> stack) {
         int index = search(payroll);

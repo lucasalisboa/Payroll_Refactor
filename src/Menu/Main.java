@@ -1,8 +1,6 @@
 package Menu;
 
-import Entities.CommissionedWorker;
-import Entities.HouristWorker;
-import Entities.SalariedWorker;
+
 import Entities.Worker;
 import Exceptions.DomainExcepciotion;
 import Memento.CopyStates;
@@ -48,100 +46,6 @@ public class Main {
 
             op.operate(operation,payroll,calendar,stack);
 
-            if(operation == 1)
-            {
-
-
-            }
-            else if(operation == 8)
-            {
-
-
-            }
-            else if (operation == 12)
-            {
-                calendar.finishDay();
-            }
-            else if (payroll.isEmpty())
-            {
-              throw new DomainExcepciotion("THE LIST IS EMPTY");
-            }
-
-            else if (operation == 9)
-            {
-                int index = search(payroll);
-                if(index != -1)
-                {
-                    payroll.get(index).showPayment(calendar.data);
-                }
-            }
-            else if(operation == 10)
-            {
-                int index = search(payroll);
-                if(index != -1)
-                {
-                    System.out.println("DO YOU WANT:");
-                    System.out.println("1 - PATTERN");
-                    System.out.println("2 - MONTH FIRST DAY");
-                    System.out.println("3 - MONTH DAY SEVEN");
-                    System.out.println("4 - MONTH LAST DAY");
-                    System.out.println("5 - WEEK ON MONDAYS");
-                    System.out.println("6 - WEEK ON FRIDAYS");
-                    System.out.println("7 - 2 WEEKS ON MONDAYS");
-                    int aux = sc.nextInt();
-
-                    Calendar cal_aux = Calendar.getInstance();
-                    cal_aux.setTime(calendar.today);
-
-                    if(aux == 1)
-                    {
-                        payroll.get(index).newPayDay_Pattern(calendar.today);
-                    }
-                    else if(aux == 2)
-                    {
-                        payroll.get(index).newPayDay_MFD(cal_aux);
-                    }
-                    else if(aux == 3)
-                    {
-                        payroll.get(index).newPayDay_MSD(cal_aux);
-                    }
-                    else if(aux == 4)
-                    {
-                        payroll.get(index).newPayDay_MLD(cal_aux);
-                    }
-                    else if(aux == 5)
-                    {
-                        payroll.get(index).newPayDay_WM(cal_aux);
-                    }
-                    else if(aux == 6)
-                    {
-                        payroll.get(index).newPayDay_WF(cal_aux);
-                    }
-                    else if(aux == 7)
-                    {
-                        payroll.get(index).newPayDay_2M(cal_aux);
-                    }
-                    else
-                    {
-                        throw new DomainExcepciotion("INVALID OPERATION");
-                    }
-                }
-                save_state(payroll,stack,stack_index);
-                stack_index = 0;
-            }
-
-            else if(operation == 11)
-            {
-                int index = search(payroll);
-                if(index != -1)
-                {
-                    System.out.println(payroll.get(index).toString());
-                }
-            }
-            else
-            {
-                throw new DomainExcepciotion("INVALID OPERATION");
-            }
         }
         catch(InputMismatchException e)
         {
@@ -153,8 +57,7 @@ public class Main {
         }
         catch (IndexOutOfBoundsException e)
         {
-            System.out.println("ARRAY POSITION DOESN'T EXIST");
-            stack_index = 0;
+            System.out.println("INVALID OPERATION");
         }
 
         System.out.println();

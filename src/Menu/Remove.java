@@ -6,6 +6,10 @@ import Memento.CopyStates;
 import java.util.List;
 
 public class Remove extends Operation implements Command {
+    public Remove() {
+        super();
+    }
+
     @Override
     public void execute(List<Worker> payroll, MyCalendar calendar, List<CopyStates> stack) {
         int index = search(payroll);

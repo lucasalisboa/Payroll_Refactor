@@ -8,8 +8,13 @@ import java.util.List;
 import java.util.Scanner;
 
 public class UndoRedo extends Operation implements Command {
+
+    public UndoRedo() {
+        super();
+    }
+
     @Override
-    public void execute(List<Worker> payroll, MyCalendar calendar, List<CopyStates> stack) {
+    public void execute(List<Worker> payroll, MyCalendar calendar, List<CopyStates> stack) throws DomainExcepciotion {
         int aux;
         Scanner sc = new Scanner(System.in);
         System.out.println("DO YOU MAKE:");

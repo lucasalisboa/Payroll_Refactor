@@ -11,6 +11,10 @@ import java.util.Scanner;
 
 public class Add extends Operation implements Command {
 
+    public Add() {
+        super();
+    }
+
     @Override
     public void execute(List<Worker> payroll, MyCalendar calendar, List<CopyStates> stack) {
         Scanner sc = new Scanner(System.in);

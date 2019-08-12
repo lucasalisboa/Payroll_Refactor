@@ -1,6 +1,7 @@
 package Menu;
 
 import Entities.Worker;
+import Exceptions.DomainExcepciotion;
 import Memento.CopyStates;
 
 import java.util.List;
@@ -9,6 +10,8 @@ import java.util.Scanner;
 public class Operation {
     List<Command> slot;
     public int stack_index;
+
+    public Operation(){}
 
     public Operation(List<Worker> payroll, List<CopyStates> stack) {
         stack_index = 0;
@@ -21,11 +24,13 @@ public class Operation {
         slot.add(5,new Information());
         slot.add(6,new RunPayroll());
         slot.add(7,new UndoRedo());
-
+        slot.add(8,new ShowPayment());
+        slot.add(9,new NewPayment());
+        slot.add(10,new ShowInfo());
         slot.add(11,new FinishDay());
     }
 
-    public void operate(int index, List<Worker> payroll, MyCalendar calendar, List<CopyStates> stack)
+    public void operate(int index, List<Worker> payroll, MyCalendar calendar, List<CopyStates> stack)  throws DomainExcepciotion
     {
         slot.get(index).execute(payroll,calendar,stack);
     }

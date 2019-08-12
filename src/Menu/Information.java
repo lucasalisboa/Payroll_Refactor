@@ -11,8 +11,12 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Information extends Operation implements Command {
+    public Information() {
+        super();
+    }
+
     @Override
-    public void execute(List<Worker> payroll, MyCalendar calendar, List<CopyStates> stack) {
+    public void execute(List<Worker> payroll, MyCalendar calendar, List<CopyStates> stack) throws DomainExcepciotion {
         int index = search(payroll);
         if(index != -1)
         {
