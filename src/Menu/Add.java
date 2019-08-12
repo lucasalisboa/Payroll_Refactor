@@ -38,7 +38,6 @@ public class Add extends Operation implements Command {
         }
         save_state(payroll,stack);
         stack_index = 0;
-        sc.close();
     }
 
 }

@@ -43,9 +43,7 @@ public class Main {
             int operation;
             Scanner sc = new Scanner(System.in);
             operation = sc.nextInt();
-
             op.operate(operation,payroll,calendar,stack);
-
         }
         catch(InputMismatchException e)
         {

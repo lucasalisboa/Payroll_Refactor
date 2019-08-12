@@ -4,6 +4,7 @@ import Entities.Worker;
 import Exceptions.DomainExcepciotion;
 import Memento.CopyStates;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -14,8 +15,9 @@ public class Operation {
     public Operation(){}
 
     public Operation(List<Worker> payroll, List<CopyStates> stack) {
-        stack_index = 0;
+        this.stack_index = 0;
         save_state(payroll,stack);
+        this.slot = new ArrayList<>();
         slot.add(0,new Add());
         slot.add(1,new Remove());
         slot.add(2,new PointCard());
