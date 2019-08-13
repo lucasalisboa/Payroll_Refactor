@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args)  {
         System.out.println("WELCOME\n");
-        MyCalendar calendar = new MyCalendar();
+        MyCalendar calendar = MyCalendar.getInstance();
         List<Worker> payroll = new ArrayList<>();
         List<CopyStates> stack = new ArrayList<>();
         Operation op = new Operation(payroll,stack);

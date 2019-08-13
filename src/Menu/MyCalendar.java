@@ -5,16 +5,20 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class MyCalendar {
+    private static MyCalendar uniqueCalendar = new MyCalendar();
     public Date today;
     public Calendar cal;
     public SimpleDateFormat data;
 
-    public MyCalendar()
+    private MyCalendar()
     {
         data = new SimpleDateFormat("dd/MM/yyyy");
         today = new Date();
         cal = Calendar.getInstance();
         cal.setTime(today);
+    }
+    public static MyCalendar getInstance(){
+        return uniqueCalendar;
     }
 
     public void finishDay()
