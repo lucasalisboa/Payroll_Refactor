@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="1885.0" y="1517.5">Menu.NewPayment</node>
+    <node x="0.0" y="761.0">Entities.CommissionedWorker</node>
+    <node x="0.0" y="1623.0">Menu.MyCalendar</node>
+    <node x="465.0" y="1623.0">Memento.CopyStates</node>
+    <node x="761.0" y="1623.0">Menu.Main</node>
+    <node x="583.0" y="794.0">Entities.SalariedWorker</node>
+    <node x="754.0" y="1506.0">Menu.UndoRedo</node>
+    <node x="3393.0" y="1517.5">Menu.ShowPayment</node>
+    <node x="1131.0" y="1506.0">Menu.SaleResult</node>
+    <node x="1508.0" y="1506.0">Menu.PointCard</node>
+    <node x="1984.25" y="1210.0">Menu.Command</node>
+    <node x="3016.0" y="1506.0">Menu.Remove</node>
+    <node x="1048.0" y="771.5">Entities.HouristWorker</node>
+    <node x="602.0" y="0.0">Entities.Worker</node>
+    <node x="1211.0" y="1623.0">Exceptions.DomainExcepciotion</node>
+    <node x="377.0" y="1517.5">Menu.RunPayroll</node>
+    <node x="4147.0" y="1506.0">Menu.Information</node>
+    <node x="2639.0" y="1506.0">Menu.Add</node>
+    <node x="2262.0" y="1517.5">Menu.ShowInfo</node>
+    <node x="2531.25" y="1143.0">Menu.Operation</node>
+    <node x="3770.0" y="1506.0">Menu.ServiceTax</node>
+    <node x="0.0" y="1517.5">Menu.FinishDay</node>
+    <node x="237.0" y="1623.0">Entities.Schedule</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Entities.CommissionedWorker" target="Entities.Worker">
+      <point x="0.0" y="-168.5" />
+      <point x="281.5" y="736.0" />
+      <point x="669.8333333333334" y="736.0" />
+      <point x="-135.66666666666663" y="355.5" />
+    </edge>
+    <edge source="Menu.Information" target="Menu.Operation">
+      <point x="89.25" y="-36.0" />
+      <point x="4414.75" y="1346.0" />
+      <point x="2886.5499999999997" y="1346.0" />
+      <point x="168.29999999999973" y="91.5" />
+    </edge>
+    <edge source="Menu.Remove" target="Menu.Operation">
+      <point x="89.25" y="-36.0" />
+      <point x="3283.75" y="1406.0" />
+      <point x="2774.35" y="1406.0" />
+      <point x="56.09999999999991" y="91.5" />
+    </edge>
+    <edge source="Menu.PointCard" target="Menu.Operation">
+      <point x="89.25" y="-36.0" />
+      <point x="1775.75" y="1466.0" />
+      <point x="2624.75" y="1466.0" />
+      <point x="-93.5" y="91.5" />
+    </edge>
+    <edge source="Menu.NewPayment" target="Menu.Operation">
+      <point x="89.25" y="-24.5" />
+      <point x="2152.75" y="1476.0" />
+      <point x="2662.15" y="1476.0" />
+      <point x="-56.09999999999991" y="91.5" />
+    </edge>
+    <edge source="Menu.PointCard" target="Menu.Command">
+      <point x="-89.25" y="-36.0" />
+      <point x="1597.25" y="1426.0" />
+      <point x="2118.125" y="1426.0" />
+      <point x="-44.625" y="24.5" />
+    </edge>
+    <edge source="Menu.ShowInfo" target="Menu.Command">
+      <point x="-89.25" y="-24.5" />
+      <point x="2351.25" y="1436.0" />
+      <point x="2177.625" y="1436.0" />
+      <point x="14.875" y="24.5" />
+    </edge>
+    <edge source="Menu.Add" target="Menu.Command">
+      <point x="-89.25" y="-36.0" />
+      <point x="2728.25" y="1426.0" />
+      <point x="2207.375" y="1426.0" />
+      <point x="44.625" y="24.5" />
+    </edge>
+    <edge source="Menu.Information" target="Menu.Command">
+      <point x="-89.25" y="-36.0" />
+      <point x="4236.25" y="1356.0" />
+      <point x="2326.375" y="1356.0" />
+      <point x="163.625" y="24.5" />
+    </edge>
+    <edge source="Menu.ShowPayment" target="Menu.Command">
+      <point x="-89.25" y="-24.5" />
+      <point x="3482.25" y="1396.0" />
+      <point x="2266.875" y="1396.0" />
+      <point x="104.125" y="24.5" />
+    </edge>
+    <edge source="Menu.FinishDay" target="Menu.Command">
+      <point x="0.0" y="-24.5" />
+      <point x="178.5" y="1386.0" />
+      <point x="1999.125" y="1386.0" />
+      <point x="-163.625" y="24.5" />
+    </edge>
+    <edge source="Menu.ServiceTax" target="Menu.Operation">
+      <point x="89.25" y="-36.0" />
+      <point x="4037.75" y="1366.0" />
+      <point x="2849.15" y="1366.0" />
+      <point x="130.89999999999986" y="91.5" />
+    </edge>
+    <edge source="Menu.SaleResult" target="Menu.Command">
+      <point x="-89.25" y="-36.0" />
+      <point x="1220.25" y="1416.0" />
+      <point x="2088.375" y="1416.0" />
+      <point x="-74.375" y="24.5" />
+    </edge>
+    <edge source="Menu.SaleResult" target="Menu.Operation">
+      <point x="89.25" y="-36.0" />
+      <point x="1398.75" y="1456.0" />
+      <point x="2587.35" y="1456.0" />
+      <point x="-130.9000000000001" y="91.5" />
+    </edge>
+    <edge source="Menu.ShowPayment" target="Menu.Operation">
+      <point x="89.25" y="-24.5" />
+      <point x="3660.75" y="1386.0" />
+      <point x="2811.75" y="1386.0" />
+      <point x="93.5" y="91.5" />
+    </edge>
+    <edge source="Menu.ServiceTax" target="Menu.Command">
+      <point x="-89.25" y="-36.0" />
+      <point x="3859.25" y="1376.0" />
+      <point x="2296.625" y="1376.0" />
+      <point x="133.875" y="24.5" />
+    </edge>
+    <edge source="Menu.ShowInfo" target="Menu.Operation">
+      <point x="89.25" y="-24.5" />
+      <point x="2529.75" y="1486.0" />
+      <point x="2699.55" y="1486.0" />
+      <point x="-18.700000000000045" y="91.5" />
+    </edge>
+    <edge source="Entities.SalariedWorker" target="Entities.Worker">
+      <point x="0.0" y="-135.5" />
+      <point x="0.0" y="355.5" />
+    </edge>
+    <edge source="Menu.UndoRedo" target="Menu.Command">
+      <point x="-89.25" y="-36.0" />
+      <point x="843.25" y="1406.0" />
+      <point x="2058.625" y="1406.0" />
+      <point x="-104.125" y="24.5" />
+    </edge>
+    <edge source="Entities.HouristWorker" target="Entities.Worker">
+      <point x="0.0" y="-158.0" />
+      <point x="1276.5" y="736.0" />
+      <point x="941.1666666666666" y="736.0" />
+      <point x="135.66666666666663" y="355.5" />
+    </edge>
+    <edge source="Menu.Add" target="Menu.Operation">
+      <point x="89.25" y="-36.0" />
+      <point x="2906.75" y="1486.0" />
+      <point x="2736.95" y="1486.0" />
+      <point x="18.699999999999818" y="91.5" />
+    </edge>
+    <edge source="Menu.RunPayroll" target="Menu.Command">
+      <point x="0.0" y="-24.5" />
+      <point x="555.5" y="1396.0" />
+      <point x="2028.875" y="1396.0" />
+      <point x="-133.875" y="24.5" />
+    </edge>
+    <edge source="Menu.UndoRedo" target="Menu.Operation">
+      <point x="89.25" y="-36.0" />
+      <point x="1021.75" y="1446.0" />
+      <point x="2549.9500000000003" y="1446.0" />
+      <point x="-168.29999999999995" y="91.5" />
+    </edge>
+    <edge source="Menu.NewPayment" target="Menu.Command">
+      <point x="-89.25" y="-24.5" />
+      <point x="1974.25" y="1436.0" />
+      <point x="2147.875" y="1436.0" />
+      <point x="-14.875" y="24.5" />
+    </edge>
+    <edge source="Menu.Remove" target="Menu.Command">
+      <point x="-89.25" y="-36.0" />
+      <point x="3105.25" y="1416.0" />
+      <point x="2237.125" y="1416.0" />
+      <point x="74.375" y="24.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8" x="2543.125" y="1348.0" />
+  <SelectedNodes>
+    <node>Menu.Remove</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
